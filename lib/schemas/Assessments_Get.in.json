@@ -1,0 +1,35 @@
+{
+    "type": "object",
+    "properties": {
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "resourceGroupName": {
+            "required": true,
+            "type": "string"
+        },
+        "projectName": {
+            "required": true,
+            "type": "string"
+        },
+        "groupName": {
+            "required": true,
+            "type": "string"
+        },
+        "assessmentName": {
+            "required": true,
+            "type": "string"
+        },
+        "Accept_Language": {
+            "type": "string"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "2018-02-02"
+            ]
+        }
+    }
+}

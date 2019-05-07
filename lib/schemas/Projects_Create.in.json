@@ -1,0 +1,156 @@
+{
+    "type": "object",
+    "properties": {
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "resourceGroupName": {
+            "required": true,
+            "type": "string"
+        },
+        "projectName": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Azure Migrate Project.",
+            "properties": {
+                "eTag": {
+                    "description": "For optimistic concurrency control.",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "Path reference to this project /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Migrate/projects/{projectName}",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "location": {
+                    "description": "Azure location in which project is created.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Name of the project.",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "properties": {
+                    "description": "Properties of the project.",
+                    "x-ms-client-flatten": true,
+                    "properties": {
+                        "createdTimestamp": {
+                            "description": "Time when this project was created. Date-Time represented in ISO-8601 format.",
+                            "format": "date-time",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "customerWorkspaceId": {
+                            "description": "ARM ID of the Service Map workspace created by user.",
+                            "type": "string"
+                        },
+                        "customerWorkspaceLocation": {
+                            "description": "Location of the Service Map workspace created by user.",
+                            "type": "string"
+                        },
+                        "discoveryStatus": {
+                            "description": "Reports whether project is under discovery.",
+                            "enum": [
+                                "Unknown",
+                                "NotStarted",
+                                "InProgress",
+                                "Completed"
+                            ],
+                            "readOnly": true,
+                            "type": "string",
+                            "x-ms-enum": {
+                                "modelAsString": true,
+                                "name": "DiscoveryStatus"
+                            }
+                        },
+                        "lastAssessmentTimestamp": {
+                            "description": "Time when last assessment was created. Date-Time represented in ISO-8601 format. This value will be null until assessment is created.",
+                            "format": "date-time",
+                            "readOnly": true,
+                            "type": "string",
+                            "nullable": true
+                        },
+                        "lastDiscoverySessionId": {
+                            "description": "Session id of the last discovery.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "lastDiscoveryTimestamp": {
+                            "description": "Time when this project was created. Date-Time represented in ISO-8601 format. This value will be null until discovery is complete.",
+                            "format": "date-time",
+                            "readOnly": true,
+                            "type": "string",
+                            "nullable": true
+                        },
+                        "numberOfAssessments": {
+                            "description": "Number of assessments created in the project.",
+                            "format": "int32",
+                            "readOnly": true,
+                            "type": "integer"
+                        },
+                        "numberOfGroups": {
+                            "description": "Number of groups created in the project.",
+                            "format": "int32",
+                            "readOnly": true,
+                            "type": "integer"
+                        },
+                        "numberOfMachines": {
+                            "description": "Number of machines in the project.",
+                            "format": "int32",
+                            "readOnly": true,
+                            "type": "integer"
+                        },
+                        "provisioningState": {
+                            "description": "Provisioning state of the project.",
+                            "enum": [
+                                "Accepted",
+                                "Creating",
+                                "Deleting",
+                                "Failed",
+                                "Moving",
+                                "Succeeded"
+                            ],
+                            "type": "string",
+                            "x-ms-enum": {
+                                "modelAsString": true,
+                                "name": "ProvisioningState"
+                            }
+                        },
+                        "updatedTimestamp": {
+                            "description": "Time when this project was last updated. Date-Time represented in ISO-8601 format.",
+                            "format": "date-time",
+                            "readOnly": true,
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "tags": {
+                    "description": "Tags provided by Azure Tagging service.",
+                    "type": "object"
+                },
+                "type": {
+                    "description": "Type of the object = [Microsoft.Migrate/projects].",
+                    "readOnly": true,
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "x-ms-azure-resource": true
+        },
+        "api_version": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "2018-02-02"
+            ]
+        },
+        "Accept_Language": {
+            "type": "string"
+        }
+    }
+}

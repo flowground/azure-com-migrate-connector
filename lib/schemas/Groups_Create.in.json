@@ -1,0 +1,100 @@
+{
+    "type": "object",
+    "properties": {
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "resourceGroupName": {
+            "required": true,
+            "type": "string"
+        },
+        "projectName": {
+            "required": true,
+            "type": "string"
+        },
+        "groupName": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "A group created in a Migration project.",
+            "properties": {
+                "eTag": {
+                    "description": "For optimistic concurrency control.",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "Path reference to this group. /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Migrate/projects/{projectName}/groups/{groupName}",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Name of the group.",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "properties": {
+                    "description": "Properties of the group.",
+                    "x-ms-client-flatten": true,
+                    "properties": {
+                        "assessments": {
+                            "description": "List of References to Assessments created on this group.",
+                            "items": {
+                                "description": "Reference to an Assessment. /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Migrate/projects/{projectName}/groups/{groupName}/assessments/{assessmentName}",
+                                "readOnly": true,
+                                "type": "string"
+                            },
+                            "readOnly": true,
+                            "type": "array"
+                        },
+                        "createdTimestamp": {
+                            "description": "Time when this project was created. Date-Time represented in ISO-8601 format.",
+                            "format": "date-time",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "machines": {
+                            "description": "List of machine names that are part of this group.",
+                            "items": {
+                                "description": "Reference to a machine. /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Migrate/projects/{projectName}/machines/{machineName}",
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "updatedTimestamp": {
+                            "description": "Time when this project was last updated. Date-Time represented in ISO-8601 format.",
+                            "format": "date-time",
+                            "readOnly": true,
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "machines"
+                    ],
+                    "type": "object"
+                },
+                "type": {
+                    "description": "Type of the object = [Microsoft.Migrate/projects/groups].",
+                    "readOnly": true,
+                    "type": "string"
+                }
+            },
+            "required": [
+                "properties"
+            ],
+            "type": "object",
+            "x-ms-azure-resource": true
+        },
+        "Accept_Language": {
+            "type": "string"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "2018-02-02"
+            ]
+        }
+    }
+}

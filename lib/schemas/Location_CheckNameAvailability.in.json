@@ -1,0 +1,45 @@
+{
+    "type": "object",
+    "properties": {
+        "locationName": {
+            "required": true,
+            "type": "string"
+        },
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Parameters for a check name availability request.",
+            "properties": {
+                "name": {
+                    "description": "The name to check for availability",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "The resource type. Must be set to Microsoft.Migrate/projects",
+                    "enum": [
+                        "Microsoft.Migrate/projects"
+                    ],
+                    "type": "string",
+                    "x-ms-enum": {
+                        "modelAsString": false,
+                        "name": "Type"
+                    }
+                }
+            },
+            "required": [
+                "name",
+                "type"
+            ],
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "2018-02-02"
+            ]
+        }
+    }
+}

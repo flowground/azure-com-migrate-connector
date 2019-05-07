@@ -1,0 +1,377 @@
+{
+    "type": "object",
+    "properties": {
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "resourceGroupName": {
+            "required": true,
+            "type": "string"
+        },
+        "projectName": {
+            "required": true,
+            "type": "string"
+        },
+        "groupName": {
+            "required": true,
+            "type": "string"
+        },
+        "assessmentName": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "An assessment created for a group in the Migration project.",
+            "properties": {
+                "eTag": {
+                    "description": "For optimistic concurrency control.",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "Path reference to this assessment. /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Migrate/projects/{projectName}/groups/{groupName}/assessment/{assessmentName}",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Unique name of an assessment.",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "properties": {
+                    "description": "Properties of the assessment.",
+                    "x-ms-client-flatten": true,
+                    "properties": {
+                        "azureHybridUseBenefit": {
+                            "description": "AHUB discount on windows virtual machines.",
+                            "enum": [
+                                "Unknown",
+                                "Yes",
+                                "No"
+                            ],
+                            "type": "string",
+                            "x-ms-enum": {
+                                "modelAsString": true,
+                                "name": "AzureHybridUseBenefit"
+                            }
+                        },
+                        "azureLocation": {
+                            "description": "Target Azure location for which the machines should be assessed. These enums are the same as used by Compute API.",
+                            "enum": [
+                                "Unknown",
+                                "EastAsia",
+                                "SoutheastAsia",
+                                "AustraliaEast",
+                                "AustraliaSoutheast",
+                                "BrazilSouth",
+                                "CanadaCentral",
+                                "CanadaEast",
+                                "WestEurope",
+                                "NorthEurope",
+                                "CentralIndia",
+                                "SouthIndia",
+                                "WestIndia",
+                                "JapanEast",
+                                "JapanWest",
+                                "KoreaCentral",
+                                "KoreaSouth",
+                                "UkWest",
+                                "UkSouth",
+                                "NorthCentralUs",
+                                "EastUs",
+                                "WestUs2",
+                                "SouthCentralUs",
+                                "CentralUs",
+                                "EastUs2",
+                                "WestUs",
+                                "WestCentralUs",
+                                "GermanyCentral",
+                                "GermanyNortheast",
+                                "ChinaNorth",
+                                "ChinaEast"
+                            ],
+                            "type": "string",
+                            "x-ms-enum": {
+                                "modelAsString": true,
+                                "name": "AzureLocation"
+                            }
+                        },
+                        "azureOfferCode": {
+                            "description": "Offer code according to which cost estimation is done.",
+                            "enum": [
+                                "Unknown",
+                                "MSAZR0003P",
+                                "MSAZR0044P",
+                                "MSAZR0059P",
+                                "MSAZR0060P",
+                                "MSAZR0062P",
+                                "MSAZR0063P",
+                                "MSAZR0064P",
+                                "MSAZR0029P",
+                                "MSAZR0022P",
+                                "MSAZR0023P",
+                                "MSAZR0148P",
+                                "MSAZR0025P",
+                                "MSAZR0036P",
+                                "MSAZR0120P",
+                                "MSAZR0121P",
+                                "MSAZR0122P",
+                                "MSAZR0123P",
+                                "MSAZR0124P",
+                                "MSAZR0125P",
+                                "MSAZR0126P",
+                                "MSAZR0127P",
+                                "MSAZR0128P",
+                                "MSAZR0129P",
+                                "MSAZR0130P",
+                                "MSAZR0111P",
+                                "MSAZR0144P",
+                                "MSAZR0149P",
+                                "MSMCAZR0044P",
+                                "MSMCAZR0059P",
+                                "MSMCAZR0060P",
+                                "MSMCAZR0063P",
+                                "MSMCAZR0120P",
+                                "MSMCAZR0121P",
+                                "MSMCAZR0125P",
+                                "MSMCAZR0128P",
+                                "MSAZRDE0003P",
+                                "MSAZRDE0044P"
+                            ],
+                            "type": "string",
+                            "x-ms-enum": {
+                                "modelAsString": true,
+                                "name": "AzureOfferCode"
+                            }
+                        },
+                        "azurePricingTier": {
+                            "description": "Pricing tier for Size evaluation.",
+                            "enum": [
+                                "Standard",
+                                "Basic"
+                            ],
+                            "type": "string",
+                            "x-ms-enum": {
+                                "modelAsString": true,
+                                "name": "AzurePricingTier"
+                            }
+                        },
+                        "azureStorageRedundancy": {
+                            "description": "Storage Redundancy type offered by Azure.",
+                            "enum": [
+                                "Unknown",
+                                "LocallyRedundant",
+                                "ZoneRedundant",
+                                "GeoRedundant",
+                                "ReadAccessGeoRedundant"
+                            ],
+                            "type": "string",
+                            "x-ms-enum": {
+                                "modelAsString": true,
+                                "name": "AzureStorageRedundancy"
+                            }
+                        },
+                        "confidenceRatingInPercentage": {
+                            "description": "Confidence rating percentage for assessment. Can be in the range [0, 100].",
+                            "format": "double",
+                            "readOnly": true,
+                            "type": "number",
+                            "nullable": true
+                        },
+                        "createdTimestamp": {
+                            "description": "Time when this project was created. Date-Time represented in ISO-8601 format.",
+                            "format": "date-time",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "currency": {
+                            "description": "Currency to report prices in.",
+                            "enum": [
+                                "Unknown",
+                                "USD",
+                                "DKK",
+                                "CAD",
+                                "IDR",
+                                "JPY",
+                                "KRW",
+                                "NZD",
+                                "NOK",
+                                "RUB",
+                                "SAR",
+                                "ZAR",
+                                "SEK",
+                                "TRY",
+                                "GBP",
+                                "MXN",
+                                "MYR",
+                                "INR",
+                                "HKD",
+                                "BRL",
+                                "TWD",
+                                "EUR",
+                                "CHF",
+                                "ARS",
+                                "AUD",
+                                "CNY"
+                            ],
+                            "type": "string",
+                            "x-ms-enum": {
+                                "modelAsString": true,
+                                "name": "Currency"
+                            }
+                        },
+                        "discountPercentage": {
+                            "description": "Custom discount percentage to be applied on final costs. Can be in the range [0, 100].",
+                            "format": "double",
+                            "type": "number"
+                        },
+                        "monthlyBandwidthCost": {
+                            "description": "Monthly network cost estimate for the machines that are part of this assessment as a group, for a 31-day month.",
+                            "format": "double",
+                            "readOnly": true,
+                            "type": "number"
+                        },
+                        "monthlyComputeCost": {
+                            "description": "Monthly compute cost estimate for the machines that are part of this assessment as a group, for a 31-day month.",
+                            "format": "double",
+                            "readOnly": true,
+                            "type": "number"
+                        },
+                        "monthlyStorageCost": {
+                            "description": "Monthly storage cost estimate for the machines that are part of this assessment as a group, for a 31-day month.",
+                            "format": "double",
+                            "readOnly": true,
+                            "type": "number"
+                        },
+                        "numberOfMachines": {
+                            "description": "Number of assessed machines part of this assessment.",
+                            "format": "int32",
+                            "readOnly": true,
+                            "type": "integer"
+                        },
+                        "percentile": {
+                            "description": "Percentile of performance data used to recommend Azure size.",
+                            "enum": [
+                                "Percentile50",
+                                "Percentile90",
+                                "Percentile95",
+                                "Percentile99"
+                            ],
+                            "type": "string",
+                            "x-ms-enum": {
+                                "modelAsString": true,
+                                "name": "Percentile"
+                            }
+                        },
+                        "pricesTimestamp": {
+                            "description": "Time when the Azure Prices were queried. Date-Time represented in ISO-8601 format.",
+                            "format": "date-time",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "scalingFactor": {
+                            "description": "Scaling factor used over utilization data to add a performance buffer for new machines to be created in Azure. Min Value = 1.0, Max value = 1.9, Default = 1.3.",
+                            "format": "double",
+                            "type": "number"
+                        },
+                        "sizingCriterion": {
+                            "description": "Assessment sizing criterion.",
+                            "enum": [
+                                "PerformanceBased",
+                                "AsOnPremises"
+                            ],
+                            "type": "string",
+                            "x-ms-enum": {
+                                "modelAsString": true,
+                                "name": "AssessmentSizingCriterion"
+                            }
+                        },
+                        "stage": {
+                            "description": "User configurable setting that describes the status of the assessment.",
+                            "enum": [
+                                "InProgress",
+                                "UnderReview",
+                                "Approved"
+                            ],
+                            "type": "string",
+                            "x-ms-enum": {
+                                "modelAsString": true,
+                                "name": "AssessmentStage"
+                            }
+                        },
+                        "status": {
+                            "description": "Whether the assessment has been created and is valid.",
+                            "enum": [
+                                "Created",
+                                "Updated",
+                                "Running",
+                                "Completed",
+                                "Invalid"
+                            ],
+                            "readOnly": true,
+                            "type": "string",
+                            "x-ms-enum": {
+                                "modelAsString": true,
+                                "name": "AssessmentStatus"
+                            }
+                        },
+                        "timeRange": {
+                            "description": "Time range of performance data used to recommend a size.",
+                            "enum": [
+                                "Day",
+                                "Week",
+                                "Month"
+                            ],
+                            "type": "string",
+                            "x-ms-enum": {
+                                "modelAsString": true,
+                                "name": "TimeRange"
+                            }
+                        },
+                        "updatedTimestamp": {
+                            "description": "Time when this project was last updated. Date-Time represented in ISO-8601 format.",
+                            "format": "date-time",
+                            "readOnly": true,
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "stage",
+                        "azureOfferCode",
+                        "timeRange",
+                        "percentile",
+                        "azureLocation",
+                        "azureStorageRedundancy",
+                        "scalingFactor",
+                        "azurePricingTier",
+                        "currency",
+                        "azureHybridUseBenefit",
+                        "discountPercentage",
+                        "sizingCriterion"
+                    ],
+                    "type": "object"
+                },
+                "type": {
+                    "description": "Type of the object = [Microsoft.Migrate/projects/groups/assessments].",
+                    "readOnly": true,
+                    "type": "string"
+                }
+            },
+            "required": [
+                "properties"
+            ],
+            "type": "object",
+            "x-ms-azure-resource": true
+        },
+        "Accept_Language": {
+            "type": "string"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "2018-02-02"
+            ]
+        }
+    }
+}
